@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GitHub Finder</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="http://localhost:8098"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="card">
+                <div class="card-title">
+                    <input class="input" type="text" v-model="username" @keydown.enter="getUser()">
+                    <button class="btn" @click="getUser()">Ara</button>
+                </div>
+                <div class="card-body-title">
+                    <img :src="user.avatar_url" :alt="user.name">
+                    <div class="name-bio">
+                        <h1 class="name">{{user.name}}</h1>
+                        <h4 class="bio"> {{user.bio}}</h4>
+                    </div>
+                </div>
+                <div class="card-detail">
+                    <ul class="list">
+                        <li class="list-item">
+                            Twitter Username : @{{user.twitter_username}}
+                        </li>
+                        <li class="list-item">
+                            <a :href="user.blog" target="_blank">blog</a>
+                        </li>
+                        <li class="list-item">
+                            Company : {{user.company}}</li>
+                        <li class="list-item">
+                            Followers : {{user.followers}}
+                        </li>
+                        <li class="list-item">
+                            Following : {{user.following}}
+                        </li>
+                        <li class="list-item">
+                            Created at : {{user.created_at}}
+                        </li>
+                        <li class="list-item">
+                            Location : {{user.location}}
+                        </li>
+                        <li class="list-item">
+                            Public Repos : {{user.public_repos}}
+                        </li>
+                        <li class="list-item">
+                            Public Gists : {{user.public_gists}}
+                        </li>
+                        <li class="list-item">
+                            <a :href="user.html_url" target="_blank">GitHub</a>
+                        </li>
+                        <li class="list-item">
+                            <a :href="user.repos_url" target="_blank">GitHub Repos Url</a>
+                        </li>
+                        <li class="list-item">
+                            Updated At : {{user.updated_at}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
