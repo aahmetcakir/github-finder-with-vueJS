@@ -1,4 +1,4 @@
-# github-finder-with-vueJS
+# GitHub Finder With VueJS
 
 <h3>live demo</h3>   https://github-finder-with-vue-js.vercel.app/
 
